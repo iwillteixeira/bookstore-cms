@@ -1,0 +1,15 @@
+/* HEADER STYLE */
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  gap: 25px;
+}
+
+.test {
+  color: red;
+}
