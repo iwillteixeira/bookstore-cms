@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import AddBooks from '../AddBooks/AddBooks';
 import BookList from '../BookList/BookList';
 import books from './BookStore.module.scss';
@@ -17,23 +18,8 @@ const BookStore = () => {
     { id: 10, categories: 'Realist' },
   ];
 
-  const booksItem = [
-    {
-      id: 1, categories: 'Horror', title: 'David', author: 'John Doe',
-    },
-    {
-      id: 2, categories: 'Fiction', title: 'Tristan', author: 'Maria M',
-    },
-    {
-      id: 3, categories: 'Dark', title: 'Viper', author: 'Anastaisia',
-    },
-    {
-      id: 4, categories: 'Romance', title: 'Daut', author: 'Lennon',
-    },
-    {
-      id: 5, categories: 'Realisti', title: 'Tatoh', author: 'John doe',
-    },
-  ];
+  const state = useSelector((state) => state);
+  const booksItem = state.booksReducer;
 
   return (
 
