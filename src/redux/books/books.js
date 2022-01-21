@@ -1,23 +1,7 @@
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
-const initialState = [
-  {
-    id: 'one', categories: 'Horror', title: 'David', author: 'John Doe',
-  },
-  {
-    id: 'two', categories: 'Fiction', title: 'Tristan', author: 'Maria M',
-  },
-  {
-    id: 'three', categories: 'Dark', title: 'Viper', author: 'Anastaisia',
-  },
-  {
-    id: 'four', categories: 'Romance', title: 'Daut', author: 'Lennon',
-  },
-  {
-    id: 'five', categories: 'Realisti', title: 'Tatoh', author: 'John doe',
-  },
-];
+const initialState = [];
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,

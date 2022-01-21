@@ -1,34 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import { addBook } from '../../redux/books/books';
 
 const AddBooks = (props) => {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [categoriesState, setCategories] = useState('');
+
   const dispatch = useDispatch();
   const { categories } = props;
 
+  const inputTitle = (e) => {
+    setTitle(e.target.value);
+  };
+  const inputAuthor = (e) => {
+    setAuthor(e.target.value);
+  };
+  const selectCategories = (e) => {
+    setCategories(e.target.value);
+  };
+
   const submitStore = (e) => {
     e.preventDefault();
-    const { title, author, select } = e.target;
-    if (title.value !== '' && author.value !== '' && select.value !== '') {
+    if (title !== '' && author !== '' && categoriesState !== '') {
       const newBook = {
         id: v4(),
-        title: title.value,
-        author: author.value,
-        categories: select.value,
+        title,
+        author,
+        categories: categoriesState,
       };
-      title.value = '';
-      author.value = '';
       dispatch(addBook(newBook));
+      const a = document.querySelector('form');
+      a.querySelector('input[name="title"]').value = '';
+      a.querySelector('input[name="author"]').value = '';
     }
   };
 
   return (
     <form className="additems" onSubmit={submitStore}>
-      <input type="text" name="title" placeholder="title" />
-      <input type="text" name="author" placeholder="author" />
-      <select name="select" defaultValue="">
+      <input type="text" name="title" placeholder="title" onChange={inputTitle} />
+      <input type="text" name="author" placeholder="author" onChange={inputAuthor} />
+      <select name="select" defaultValue="" onChange={selectCategories}>
         <option value="" disabled>Category</option>
         {categories.map((option) => (
           <option key={option.id} value={option.categories}>{option.categories}</option>
