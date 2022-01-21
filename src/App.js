@@ -7,6 +7,7 @@ import './App.css';
 
 function App() {
   return (
+
     <div className="App">
       <Header />
       <Routes>
@@ -14,6 +15,7 @@ function App() {
         <Route path="categories" element={<Categories />} />
       </Routes>
     </div>
+
   );
 }
 

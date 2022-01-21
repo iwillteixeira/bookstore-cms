@@ -1,9 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeBook } from '../../redux/books/books';
 import bookItem from './Books.module.scss';
 
 const Books = (props) => {
   const { book } = props;
+  const dispatch = useDispatch();
+
+  const remBook = (id) => {
+    dispatch(removeBook(id));
+  };
   return (
     <div className={bookItem.item} key={book.id}>
       <div>
@@ -12,7 +19,7 @@ const Books = (props) => {
         <p>{book.author}</p>
         <ul>
           <li>Comments</li>
-          <li>Remove</li>
+          <li><button type="button" className={bookItem.remove} onClick={() => remBook(book.id)}>Remove</button></li>
           <li>Edit</li>
         </ul>
       </div>
@@ -31,7 +38,7 @@ const Books = (props) => {
 
 Books.propTypes = {
   book: PropTypes.exact({
-    id: PropTypes.number,
+    id: PropTypes.string,
     categories: PropTypes.string,
     author: PropTypes.string,
     title: PropTypes.string,
