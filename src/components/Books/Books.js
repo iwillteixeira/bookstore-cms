@@ -14,9 +14,9 @@ const Books = (props) => {
   return (
     <div className={bookItem.item} key={book.id}>
       <div>
-        <h3>{book.categories}</h3>
+        <h3>{book.category}</h3>
         <h2>{book.title}</h2>
-        <p>{book.author}</p>
+        <p>GENERIC AUTHOR</p>
         <ul>
           <li>Comments</li>
           <li><button type="button" className={bookItem.remove} onClick={() => remBook(book.id)}>Remove</button></li>
@@ -39,8 +39,7 @@ const Books = (props) => {
 Books.propTypes = {
   book: PropTypes.exact({
     id: PropTypes.string,
-    categories: PropTypes.string,
-    author: PropTypes.string,
+    category: PropTypes.string,
     title: PropTypes.string,
   }).isRequired,
 };
