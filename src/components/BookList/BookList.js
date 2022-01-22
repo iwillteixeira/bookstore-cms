@@ -5,6 +5,7 @@ import list from './BookList.module.scss';
 
 const BookList = (props) => {
   const { booksItem } = props;
+
   return (
     <div className={list.wrapper}>
       {booksItem.map((book) => (
