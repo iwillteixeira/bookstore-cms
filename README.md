@@ -2,17 +2,22 @@
 
 # BookStore CMS
 
-Main goal of this milestone was working with React components and events creating SPA.
+Main goal of this milestone was working with React & Redux to connect to an API
 
 
-There is no ScreenShot of the project yet.
+# Desktop Version
+![screenshot](./screenshot_desktop.png)
 
+# Mobile Version
+
+![screenshot](./screenshot_mobile.png)
 ## Built With
 
 - HTML
-- SASS
 - JS
 - React
+- Redux
+- Tailwind
 
 ### Live version
 
