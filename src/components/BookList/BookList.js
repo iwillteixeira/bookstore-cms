@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Books from '../Books/Books';
-import list from './BookList.module.scss';
 
 const BookList = (props) => {
   const { booksItem } = props;
 
   return (
-    <div className={list.wrapper}>
+    <div className="booklist__container container mx-auto lg:overflow-y-auto">
       {booksItem.map((book) => (
         <Books key={book.id} book={book} />
       ))}

@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import AddBooks from '../AddBooks/AddBooks';
 import BookList from '../BookList/BookList';
-import books from './BookStore.module.scss';
 
 const BookStore = () => {
   const categories = [
@@ -23,7 +22,7 @@ const BookStore = () => {
 
   return (
 
-    <div className={books.bookWrapper}>
+    <div className="mainbook__container py-10 mx-10">
       <BookList booksItem={booksItem} />
       <AddBooks categories={categories} />
     </div>

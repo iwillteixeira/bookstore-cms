@@ -33,16 +33,23 @@ const AddBooks = (props) => {
   };
 
   return (
-    <form className="additems" onSubmit={submitStore}>
-      <input type="text" name="title" placeholder="title" onChange={inputTitle} />
-      <select name="select" defaultValue="" onChange={selectCategories}>
-        <option value="" disabled>Category</option>
-        {categories.map((option) => (
-          <option key={option.id} value={option.categories}>{option.categories}</option>
-        ))}
-      </select>
-      <button type="submit">ADD BOOK</button>
-    </form>
+    <div className="flex w-full py-10">
+
+      <div className="container mx-auto">
+        <hr className="py-5" />
+        <h2 className="text-add font-mont font-bold text-xl mb-4 text-left">ADD NEW BOOK</h2>
+        <form className="pb-8 grid lg:grid-cols-8 xl:grid-cols-5 lg:gap-6 gap-4 xl:gap-8" onSubmit={submitStore}>
+          <input className="px-4 py-3 rounded lg:col-span-4 xl:col-span-3 border border-gray-200 font-mont font-normal md:text-base" type="text" name="title" placeholder="title" onChange={inputTitle} />
+          <select className="bg-white px-4 py-3 rounded border border-gray-200 font-mont font-normal md:text-base lg:col-span-2 xl:col-span-1" name="select" defaultValue="" onChange={selectCategories}>
+            <option value="" disabled>Category</option>
+            {categories.map((option) => (
+              <option key={option.id} value={option.categories}>{option.categories}</option>
+            ))}
+          </select>
+          <button className="bg-azure text-white py-3 px-11 rounded font-robo font-bold md:text-sm hover:bg-blue-600 lg:col-span-2 xl:col-span-1" type="submit">ADD BOOK</button>
+        </form>
+      </div>
+    </div>
   );
 };
 
