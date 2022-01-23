@@ -13,7 +13,7 @@ const Books = (props) => {
   return (
     <div className="bg-white px-7 py-7 rounded mb-4" key={book.id}>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4 sm:gap-8 lg:gap-8">
-        <div className="description col-span-1 lg:col-span-3">
+        <div className="description col-span-1 lg:col-span-3 text-left">
           <p className="category text-title opacity-50 font-mont font-bold md:text-sm capitalize">{book.category}</p>
           <p className="title text-title font-robo font-bold text-xl md:text-2xl">{book.title}</p>
           <p className="text-link font-robo font-light md:text-sm mb-4">GENERIC AUTHOR</p>
@@ -32,7 +32,7 @@ const Books = (props) => {
             <p className="text-title md:text-sm opacity-50 font-mont font-normal">Completed</p>
           </div>
         </div>
-        <div className="col-span-1 lg:col-span-2">
+        <div className="col-span-1 lg:col-span-2 text-left">
           <p className="text-title opacity-50 font-robo font-light md:text-sm mb-2">CURRENT CHAPTER</p>
           <p className="text-title font-robo font-light md:text-base  mb-4 lg:mb-7">Chapter 1</p>
           <button type="button" className="bg-azure text-white py-2 px-8 font-robo font-light  text-xs md:text-sm rounded hover:bg-blue-600">UPDATE PROGRESS</button>

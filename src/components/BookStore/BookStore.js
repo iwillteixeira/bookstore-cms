@@ -22,7 +22,7 @@ const BookStore = () => {
 
   return (
 
-    <div className="mainbook__container py-10">
+    <div className="mainbook__container py-10 mx-10">
       <BookList booksItem={booksItem} />
       <AddBooks categories={categories} />
     </div>
